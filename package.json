@@ -1,0 +1,24 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "gh-jump",
+  "title": "GH Jump",
+  "description": "Alfred-style jump to a GitHub repo, its PRs, issues or Actions: type `myrepo pu`, `api i 12`.",
+  "icon": "icon.png",
+  "author": "bviews",
+  "license": "MIT",
+  "categories": ["Developer Tools"],
+  "commands": [
+    {
+      "name": "gh",
+      "title": "GH Jump",
+      "subtitle": "GitHub",
+      "description": "Fuzzy-find a repo and open its page, PRs (pu), issues (i), Actions (a) or releases (r).",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": { "esbuild": "0.24.2" },
+  "scripts": {
+    "build": "esbuild src/gh.jsx --bundle --platform=node --format=cjs --target=es2020 --jsx=automatic --external:@raycast/api --external:react --external:react/jsx-runtime --outfile=gh.js"
+  }
+}
